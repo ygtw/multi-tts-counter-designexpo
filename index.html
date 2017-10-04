@@ -1,0 +1,96 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+
+<div id="main" class="container .container-fluid">
+	
+	
+</div>
+
+
+<style type="text/css">
+
+.row-margin-top { margin-top: 40px; }
+
+</style>
+
+<script>
+
+var objs = new Array(100);
+for (var i = objs.length - 1; i >= 0; i--) {
+	objs[i]=0;
+};
+
+var objs_t = new Array(100);
+
+var objs_length = 15;
+
+var row = 3;
+
+var i=1;
+
+objs_t[i++]="愛國婦人館"
+objs_t[i++]="大成門"
+objs_t[i++]="正興街"
+objs_t[i++]="全臺開基藥王廟"
+objs_t[i++]="信義街"
+objs_t[i++]="孔廟"
+objs_t[i++]="台江國家公園"
+objs_t[i++]="府中街"
+objs_t[i++]="吳園"
+objs_t[i++]="鴨母寮市場"
+objs_t[i++]="民權路二段"
+objs_t[i++]="和平街"
+objs_t[i++]="兌悅門"
+objs_t[i++]="奇美博物館"
+objs_t[i++]="忠孝街"
+
+var temphtml = $("#main").html();
+for (var i = 1, j=3 ; i <= objs_length ; i++,j--) {
+
+	if(j==row)
+	{
+		temphtml = temphtml + '<div class="row row-margin-top ">'		
+	}
+	
+
+	temphtml = temphtml + '<div class="col">	<button type="button" onclick="add('+ i +')" class="btn btn-primary btn-lg btn-block">' + objs_t[i] +'</button>	<button id="number_'+ i +'" type="button" onclick="less('+ i +')" class="btn btn-light btn-lg btn-block">0</button>	<video style="display:none" id="player_'+ i +'"  name="media"><source src="http://translate.google.com/translate_tts?ie=UTF-8&amp;total=1&amp;idx=0&amp;textlen=32&amp;client=tw-ob&amp;q='+ objs_t[i] +'&amp;tl=zh-tw" type="audio/mpeg"></video>	</div>'  
+
+	
+
+	if(j==1)
+	{
+		temphtml =  temphtml + '</div>'		
+	}
+	console.log(j)
+	if(j==1) j=4;
+
+};
+
+$("#main").html(temphtml);
+
+
+function add (obj_i) {
+	// body...
+	objs[obj_i]= objs[obj_i]+1;
+	$("#number_"+obj_i).html ( objs[obj_i] );
+	console.log( objs[obj_i] )
+	$("#player_"+obj_i).get(0).play();
+}
+
+
+function less (obj_i) {
+	// body...
+	objs[obj_i]= objs[obj_i]-1;
+	$("#number_"+obj_i).html ( objs[obj_i] );
+	console.log( objs[obj_i] )
+//	$("#player_"+obj_i).get(0).play();
+}
+
+</script>
