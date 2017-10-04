@@ -10,7 +10,14 @@
 
 <div id="main" class="container .container-fluid">
 	
-	
+	<div class="row row-margin-top ">
+		<div class="col"> 
+
+			 <h4 class="btn-block"> 一口一口 台南 | 當日販賣計數器 </h4>
+			 <div> 點文字按鈕+1 , 點數字按鈕-1</div>
+
+		</div>
+	</div>
 </div>
 
 
@@ -18,6 +25,21 @@
 
 .row-margin-top { margin-top: 40px; }
 
+.o1{ background-color: #685353; color:white;  }
+.o2{ background-color: #b4a7f2; color:black }
+.o3{ background-color: #ffebd8; color:black;  }
+.o4{ background-color: #e226ef; color:white; }
+.o5{ background-color: #b7b7b7; color:black }
+.o6{ background-color: #5813f9; color:white; }
+.o7{ background-color: #f7f7f7; color:black }
+.o8{ background-color: #ffda8c; color:black }
+.o9{ background-color: #ffae00; color:black }
+.o10{ background-color: #6890ff;color:white;  }
+.o11{ background-color: #4c3131; color:white; }
+.o12{ background-color: #c2fcd5; color:black }
+.o13{ background-color: #f78888; color:black }
+.o14{ background-color: #314c3a; color:white; }
+.o15{ background-color: #0586ff; color:white; }
 </style>
 
 <script>
@@ -35,21 +57,21 @@ var row = 3;
 
 var i=1;
 
-objs_t[i++]="愛國婦人館"
-objs_t[i++]="大成門"
-objs_t[i++]="正興街"
-objs_t[i++]="全臺開基藥王廟"
-objs_t[i++]="信義街"
-objs_t[i++]="孔廟"
-objs_t[i++]="台江國家公園"
-objs_t[i++]="府中街"
-objs_t[i++]="吳園"
-objs_t[i++]="鴨母寮市場"
-objs_t[i++]="民權路二段"
-objs_t[i++]="和平街"
-objs_t[i++]="兌悅門"
-objs_t[i++]="奇美博物館"
-objs_t[i++]="忠孝街"
+objs_t[i++]="1.愛國婦人館"
+objs_t[i++]="2.大成門"
+objs_t[i++]="3.正興街"
+objs_t[i++]="4.開基藥王廟"
+objs_t[i++]="5.信義街"
+objs_t[i++]="6.孔廟"
+objs_t[i++]="7.台江國家公園"
+objs_t[i++]="8.府中街"
+objs_t[i++]="9.吳園"
+objs_t[i++]="10.鴨母寮市場"
+objs_t[i++]="11.民權路二段"
+objs_t[i++]="12.和平街"
+objs_t[i++]="13.兌悅門"
+objs_t[i++]="14.奇美博物館"
+objs_t[i++]="15.忠孝街"
 
 var temphtml = $("#main").html();
 for (var i = 1, j=3 ; i <= objs_length ; i++,j--) {
@@ -60,7 +82,7 @@ for (var i = 1, j=3 ; i <= objs_length ; i++,j--) {
 	}
 	
 
-	temphtml = temphtml + '<div class="col">	<button type="button" onclick="add('+ i +')" class="btn btn-primary btn-lg btn-block">' + objs_t[i] +'</button>	<button id="number_'+ i +'" type="button" onclick="less('+ i +')" class="btn btn-light btn-lg btn-block">0</button>	<video style="display:none" id="player_'+ i +'"  name="media"><source src="http://translate.google.com/translate_tts?ie=UTF-8&amp;total=1&amp;idx=0&amp;textlen=32&amp;client=tw-ob&amp;q='+ objs_t[i] +'&amp;tl=zh-tw" type="audio/mpeg"></video>	</div>'  
+	temphtml = temphtml + '<div class="col">	<button type="button" onclick="add('+ i +')" class="btn btn-lg btn-block o'+ i +'">' + objs_t[i] +'</button>	<button id="number_'+ i +'" type="button" onclick="less('+ i +')" class="btn btn-light btn-lg btn-block">0</button>	<video style="display:none" id="player_'+ i +'"  name="media"><source src="http://translate.google.com/translate_tts?ie=UTF-8&amp;total=1&amp;idx=0&amp;textlen=32&amp;client=tw-ob&amp;q='+ objs_t[i] +'&amp;tl=zh-tw" type="audio/mpeg"></video>	</div>'  
 
 	
 
